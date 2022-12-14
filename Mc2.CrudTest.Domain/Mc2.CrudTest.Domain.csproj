@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="CustomerManagement\Aggregates\" />
+    <Folder Include="CustomerManagement\Enums\" />
+    <Folder Include="CustomerManagement\Exceptions\" />
+    <Folder Include="CustomerManagement\Localization\" />
+    <Folder Include="CustomerManagement\ValueObjects\" />
+    <Folder Include="CustomerManagement\Services\" />
+    <Folder Include="CustomerManagement\ParameterObjects\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mc2.CrudTest.Core\Mc2.CrudTest.Application.Core.csproj" />
+  </ItemGroup>
+
+</Project>

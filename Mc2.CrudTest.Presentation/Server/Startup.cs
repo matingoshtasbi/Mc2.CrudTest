@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -21,6 +22,23 @@ namespace Mc2.CrudTest.Presentation.Server
         {
 
             services.AddControllersWithViews();
+            services.AddControllers();
+
+            // This Package Added in .Net 6 for minimal Api that Unfortunately We haven't here :)
+            // services.AddEndpointsApiExplorer();
+
+            services.AddLocalization();
+
+            services.AddRequestLocalization(x =>
+            {
+                x.DefaultRequestCulture = new RequestCulture("en");
+                x.ApplyCurrentCultureToResponseHeaders = true;
+            });
+
+
+            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+            services.AddControllersWithViews();
             services.AddRazorPages();
         }
 
@@ -31,6 +49,8 @@ namespace Mc2.CrudTest.Presentation.Server
             {
                 app.UseDeveloperExceptionPage();
                 app.UseWebAssemblyDebugging();
+                app.UseSwagger();
+                app.UseSwaggerUI();
             }
             else
             {
@@ -43,6 +63,8 @@ namespace Mc2.CrudTest.Presentation.Server
             app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
 
+            app.UseRequestLocalization();
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
@@ -51,6 +73,7 @@ namespace Mc2.CrudTest.Presentation.Server
                 endpoints.MapControllers();
                 endpoints.MapFallbackToFile("index.html");
             });
+            app.UseStaticFiles();
         }
     }
 }
