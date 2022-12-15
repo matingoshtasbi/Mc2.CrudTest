@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Folder Include="CustomerManagement\Enums\" />
-    <Folder Include="CustomerManagement\Exceptions\" />
     <Folder Include="CustomerManagement\ValueObjects\" />
   </ItemGroup>
 
