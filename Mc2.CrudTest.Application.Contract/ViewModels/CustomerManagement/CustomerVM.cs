@@ -10,6 +10,6 @@ namespace Mc2.CrudTest.Application.Contract.ViewModels.CustomerManagement
         public DateTime DateOfBirth { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
-        public ulong BankAccountNumber { get; set; }
+        public string BankAccountNumber { get; set; }
     }
 }

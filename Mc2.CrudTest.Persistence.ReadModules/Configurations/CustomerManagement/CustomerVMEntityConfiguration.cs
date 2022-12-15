@@ -8,7 +8,7 @@ namespace Mc2.CrudTest.Infrastructure.ReadModules.Configurations.CustomerManagem
     {
         public void Configure(EntityTypeBuilder<CustomerVM> builder)
         {
-            builder.ToSqlQuery(@"SELECT * FROM Customers");
+            builder.ToSqlQuery(@"SELECT c.* FROM Customers c");
         }
     }
 }
