@@ -26,10 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BaseClasses\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Mc2.CrudTest.Application\Mc2.CrudTest.Application.csproj" />
     <ProjectReference Include="..\Mc2.CrudTest.Domain\Mc2.CrudTest.Domain.csproj" />
     <ProjectReference Include="..\Mc2.CrudTest.Persistence.ReadModules\Mc2.CrudTest.Infrastructure.ReadModules.csproj" />

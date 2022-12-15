@@ -5,13 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstractions\" />
-    <Folder Include="DTOs\" />
-    <Folder Include="ViewModels\" />
+    <Folder Include="DTOs\CustomerManagement\" />
+    <Folder Include="Queries\CustomerManagement\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mc2.CrudTest.Application\Mc2.CrudTest.Application.csproj" />
+    <ProjectReference Include="..\Mc2.CrudTest.Core\Mc2.CrudTest.Application.Core.csproj" />
   </ItemGroup>
 
 </Project>

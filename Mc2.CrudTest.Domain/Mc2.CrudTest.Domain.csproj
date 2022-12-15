@@ -5,17 +5,34 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CustomerManagement\Aggregates\" />
     <Folder Include="CustomerManagement\Enums\" />
     <Folder Include="CustomerManagement\Exceptions\" />
-    <Folder Include="CustomerManagement\Localization\" />
     <Folder Include="CustomerManagement\ValueObjects\" />
-    <Folder Include="CustomerManagement\Services\" />
-    <Folder Include="CustomerManagement\ParameterObjects\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Mc2.CrudTest.Core\Mc2.CrudTest.Application.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="CustomerManagement\Localization\CustomerManagementLocalization.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CustomerManagementLocalization.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="CustomerManagement\Localization\CustomerManagementLocalization.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CustomerManagement\Localization\CustomerManagementLocalization.fa.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CustomerManagement\Localization\CustomerManagementLocalization.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CustomerManagementLocalization.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

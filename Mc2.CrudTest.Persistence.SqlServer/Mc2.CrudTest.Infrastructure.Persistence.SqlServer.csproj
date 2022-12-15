@@ -19,8 +19,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DbContexts\" />
     <Folder Include="Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mc2.CrudTest.Persistence\Mc2.CrudTest.Infrastructure.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

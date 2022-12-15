@@ -1,9 +1,23 @@
+using Mc2.CrudTest.Application.Core.Abstractions;
+using Mc2.CrudTest.Application.Core.Exceptions.ErrorHandling;
+using Mc2.CrudTest.Application.DependencyInjectionExtensions;
+using Mc2.CrudTest.Infrastructure.Persistence.DbContexts;
+using Mc2.CrudTest.Infrastructure.Persistence.SqlServer.DbContexts;
+using Mc2.CrudTest.Infrastructure.Persistence.UnitofWork;
+using Mc2.CrudTest.Infrastructure.ReadModules.DbContexts;
+using Mc2.CrudTest.Shared;
+using Mc2.CrudTest.Shared.AutoMapper;
+using Mc2.CrudTest.Shared.ErrorHandling;
+using Mc2.CrudTest.Shared.Swagger;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Collections.Generic;
+using System.Globalization;
 
 namespace Mc2.CrudTest.Presentation.Server
 {
@@ -21,6 +35,18 @@ namespace Mc2.CrudTest.Presentation.Server
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddDbContext<CommandDbContext, CommandDbContext>(options =>
+                options.UseLazyLoadingProxies()
+                .UseSqlServer(Configuration.GetConnectionString("MainConnection")));
+
+            services.AddDbContext<QueryDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("MainConnection"))
+                , ServiceLifetime.Scoped);
+
+            services.AddScoped<IUnitOfWork, MainUnitOfWork>();
+
+            services.AddTransient<IExceptionHandler, ExceptionHandler>();
+            services.AddAutoMapper(typeof(CustomerProfile));
             services.AddControllersWithViews();
             services.AddControllers();
 
@@ -33,10 +59,14 @@ namespace Mc2.CrudTest.Presentation.Server
             {
                 x.DefaultRequestCulture = new RequestCulture("en");
                 x.ApplyCurrentCultureToResponseHeaders = true;
+                x.SupportedCultures = new List<CultureInfo> { new("fa"), new("en") };
+                x.SupportedUICultures = new List<CultureInfo> { new("fa"), new("en") };
             });
 
+            services.AddCustomerManagementModules();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            services.AddSwaggerGen(config => config.OperationFilter<HeaderFilter>());
 
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -64,6 +94,7 @@ namespace Mc2.CrudTest.Presentation.Server
             app.UseStaticFiles();
 
             app.UseRequestLocalization();
+            app.UseMiddleware<ApplicationExceptionMiddleware>();
 
             app.UseRouting();
 

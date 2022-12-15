@@ -12,12 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="AutoMapper\" />
-    <Folder Include="ErrorHandling\" />
-    <Folder Include="Swagger\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Mc2.CrudTest.Application.Contract\Mc2.CrudTest.Application.Contract.csproj" />
     <ProjectReference Include="..\..\Mc2.CrudTest.Domain\Mc2.CrudTest.Domain.csproj" />
   </ItemGroup>

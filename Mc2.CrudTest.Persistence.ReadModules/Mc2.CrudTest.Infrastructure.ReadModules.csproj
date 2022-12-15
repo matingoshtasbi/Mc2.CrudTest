@@ -19,9 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Configurations\" />
-    <Folder Include="DbContexts\" />
-    <Folder Include="Repositories\" />
+    <ProjectReference Include="..\Mc2.CrudTest.Application.Contract\Mc2.CrudTest.Application.Contract.csproj" />
   </ItemGroup>
 
 </Project>

@@ -22,16 +22,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Mc2.CrudTest.Application\Mc2.CrudTest.Application.csproj" />
     <ProjectReference Include="..\..\Mc2.CrudTest.Persistence.ReadModules\Mc2.CrudTest.Infrastructure.ReadModules.csproj" />
     <ProjectReference Include="..\..\Mc2.CrudTest.Persistence.Sqlite\Mc2.CrudTest.Infrastructure.Persistence.Sqlite.csproj" />
     <ProjectReference Include="..\..\Mc2.CrudTest.Persistence.SqlServer\Mc2.CrudTest.Infrastructure.Persistence.SqlServer.csproj" />
     <ProjectReference Include="..\..\Mc2.CrudTest.Persistence\Mc2.CrudTest.Infrastructure.Persistence.csproj" />
     <ProjectReference Include="..\Shared\Mc2.CrudTest.Shared.csproj" />
     <ProjectReference Include="..\Front\Mc2.CrudTest.Presentation.Front.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Swagger\" />
   </ItemGroup>
 
 
