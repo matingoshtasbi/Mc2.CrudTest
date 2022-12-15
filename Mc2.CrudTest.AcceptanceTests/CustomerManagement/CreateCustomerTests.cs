@@ -4,6 +4,7 @@ using Mc2.CrudTest.Domain.CustomerManagement.Exceptions;
 using Mc2.CrudTest.Domain.CustomerManagement.ParameterObjects;
 using Mc2.CrudTest.Domain.CustomerManagement.Services;
 using System;
+using TechTalk.SpecFlow;
 using Xunit;
 
 namespace Mc2.CrudTest.AcceptanceTests
@@ -11,8 +12,8 @@ namespace Mc2.CrudTest.AcceptanceTests
     public class BddTddTests : BaseTestClass
     {
         #region members
-        ICustomerService _customerService;
-        ICustomerRepository _customerRepository;
+        private ICustomerService _customerService;
+        private ICustomerRepository _customerRepository;
         #endregion
 
         #region constractor
@@ -148,11 +149,11 @@ namespace Mc2.CrudTest.AcceptanceTests
 
             Guid guidResult;
             Assert.True(Guid.TryParse(customer.Id.ToString(), out guidResult));
-
         }
         #endregion
 
         #region BDD
+        // In StepDefinitions Folder
         #endregion
 
         #endregion
