@@ -34,7 +34,7 @@ namespace Mc2.CrudTest.AcceptanceTests
                 DateOfBirth = new DateTime(2000, 1, 12),
                 Email = "matin.goshtasbi@gmail.com",
                 PhoneNumber = "+989309756517",
-                BankAccountNumber = 6037997482041861
+                BankAccountNumber = "6037-9974-8204-1861"
             };
         }
         #endregion
@@ -86,7 +86,7 @@ namespace Mc2.CrudTest.AcceptanceTests
         public void ErrorIfBankAccountNumberIsEmpty()
         {
             CustomerPO customerPO = createCustomerPO();
-            customerPO.BankAccountNumber = 0;
+            customerPO.BankAccountNumber = "0-12-345-6789";
             Assert.Throws<InvalidCustomerValueException>(() => CustomerFactory.Create(customerPO, _customerService));
         }
 

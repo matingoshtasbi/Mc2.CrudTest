@@ -39,7 +39,7 @@ namespace Mc2.CrudTest.AcceptanceTests
 
         public void ConfigureServices(IServiceCollection services)
         {
-            var keepAliveConnection = new SqliteConnection(Configuration.GetConnectionString("InMemoryConnection"));
+            var keepAliveConnection = new SqliteConnection("Data Source=:memory:");
             keepAliveConnection.Open();
 
             services.AddDbContext<CommandDbContext, SqliteCommandDbContext>(options =>

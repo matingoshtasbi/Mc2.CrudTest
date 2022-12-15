@@ -37,10 +37,10 @@ namespace Mc2.CrudTest.Presentation.Server
 
             services.AddDbContext<CommandDbContext, CommandDbContext>(options =>
                 options.UseLazyLoadingProxies()
-                .UseSqlServer(Configuration.GetConnectionString("MainConnection")));
+                .UseSqlite(Configuration.GetConnectionString("MainConnection")));
 
             services.AddDbContext<QueryDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("MainConnection"))
+                options.UseSqlite(Configuration.GetConnectionString("MainConnection"))
                 , ServiceLifetime.Scoped);
 
             services.AddScoped<IUnitOfWork, MainUnitOfWork>();

@@ -9,6 +9,6 @@ namespace Mc2.CrudTest.Domain.CustomerManagement.ParameterObjects
         public DateTime DateOfBirth { get; set; } = default!;
         public string PhoneNumber { get; set; } = default!;
         public string Email { get; set; } = default!;
-        public ulong BankAccountNumber { get; set; } = default!;
+        public string BankAccountNumber { get; set; } = default!;
     }
 }

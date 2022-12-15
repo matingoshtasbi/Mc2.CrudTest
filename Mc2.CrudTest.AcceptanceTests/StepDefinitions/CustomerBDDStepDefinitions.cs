@@ -39,7 +39,7 @@ namespace Mc2.CrudTest.AcceptanceTests.StepDefinitions
                 DateOfBirth = new DateTime(2000, 1, 12),
                 Email = "matin.goshtasbi@gmail.com",
                 PhoneNumber = "+989309756517",
-                BankAccountNumber = 6037997482041861
+                BankAccountNumber = "6037-9974-8204-1861"
             };
         }
         #endregion
@@ -54,7 +54,7 @@ namespace Mc2.CrudTest.AcceptanceTests.StepDefinitions
         [When(@"Customer Added to App")]
         public void WhenCustomerAddedToApp()
         {
-            var customer = CustomerFactory.Create(customerPO, _customerService);
+            customer = CustomerFactory.Create(customerPO, _customerService);
             _customerRepository.Add(customer);
             _customerRepository.UnitOfWork.SaveChanges();
         }
