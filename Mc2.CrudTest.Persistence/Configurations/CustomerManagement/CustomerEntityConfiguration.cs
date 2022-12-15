@@ -9,10 +9,10 @@ namespace Mc2.CrudTest.Infrastructure.Persistence.Configurations.CustomerManagem
 
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
-            //00989309756517 => 14 lenght 
+            //+989309756517 => 13 lenght 
             builder.ToTable("Customers");
             builder.Property(x => x.PhoneNumber)
-            .HasMaxLength(14);
+            .HasMaxLength(13);
         }
     }
 }

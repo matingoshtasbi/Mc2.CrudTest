@@ -81,7 +81,10 @@ namespace Mc2.CrudTest.AcceptanceTests.StepDefinitions
         [Given(@"Input Customer new Info")]
         public void GivenInputCustomerNewInfo()
         {
-            customer.LastName = "Alizade";
+            var customerPO2 = createCustomerPO();
+            customerPO2.FirstName = "Ali";
+            customerPO2.LastName = "Alizade";
+            customer.UpdateProperties(customerPO2);
         }
 
         [When(@"Customer Updated to App")]
