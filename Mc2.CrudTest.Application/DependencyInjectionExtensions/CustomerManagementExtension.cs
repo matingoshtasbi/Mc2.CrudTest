@@ -12,11 +12,11 @@ namespace Mc2.CrudTest.Application.DependencyInjectionExtensions
     {
         public static IServiceCollection AddCustomerManagementModules(this IServiceCollection services)
         {
-            services.AddTransient<ICustomerManagementCommandService, CustomerManagementCommandService>();
-            services.AddTransient<ICustomerManagementQueryService, CustomerManagementQueryService>();
-            services.AddTransient<ICustomerRepository, CustomerRepository>();
-            services.AddTransient<ICustomerManagementReadRepository, CustomerManagementReadRepository>();
-            services.AddTransient<ICustomerService, CustomerService>();
+            services.AddScoped<ICustomerManagementCommandService, CustomerManagementCommandService>();
+            services.AddScoped<ICustomerManagementQueryService, CustomerManagementQueryService>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<ICustomerManagementReadRepository, CustomerManagementReadRepository>();
+            services.AddScoped<ICustomerService, CustomerService>();
 
             return services;
         }

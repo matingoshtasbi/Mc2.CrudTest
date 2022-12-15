@@ -73,6 +73,24 @@ namespace Mc2.CrudTest.Domain.CustomerManagement.Localization {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        public static string Customer {
+            get {
+                return ResourceManager.GetString("Customer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string CustomerId {
+            get {
+                return ResourceManager.GetString("CustomerId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         public static string CustomerInfo {
             get {
                 return ResourceManager.GetString("CustomerInfo", resourceCulture);
@@ -148,6 +166,15 @@ namespace Mc2.CrudTest.Domain.CustomerManagement.Localization {
         public static string RepeatedRecord {
             get {
                 return ResourceManager.GetString("RepeatedRecord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ResourseNotFound {
+            get {
+                return ResourceManager.GetString("ResourseNotFound", resourceCulture);
             }
         }
     }

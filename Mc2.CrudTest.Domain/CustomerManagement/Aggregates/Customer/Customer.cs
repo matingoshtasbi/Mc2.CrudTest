@@ -115,10 +115,15 @@ namespace Mc2.CrudTest.Domain.CustomerManagement.Aggregates
         #endregion
 
         #region public methods
-        public void UpdateProperties(CustomerPO po , ICustomerService customerService)
+        public void UpdateProperties(CustomerPO po)
         {
-            CustomerService = customerService;
             validate(po);
+            FirstName = po.FirstName;
+            LastName = po.LastName;
+            DateOfBirth = po.DateOfBirth;
+            Email = po.Email;
+            PhoneNumber = po.PhoneNumber;
+            BankAccountNumber = po.BankAccountNumber;
         }
         #endregion
     }

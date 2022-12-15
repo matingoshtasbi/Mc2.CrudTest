@@ -114,6 +114,7 @@ namespace Mc2.CrudTest.AcceptanceTests.StepDefinitions
         public void WhenCustomerDeletedFromApp()
         {
             _customerRepository.Remove(customer.Id);
+            _customerRepository.UnitOfWork.SaveChanges();
         }
 
         [Then(@"App should be Show Delete Successful")]

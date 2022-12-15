@@ -120,6 +120,12 @@
   <data name="BankAccountNumber" xml:space="preserve">
     <value />
   </data>
+  <data name="Customer" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CustomerId" xml:space="preserve">
+    <value />
+  </data>
   <data name="CustomerInfo" xml:space="preserve">
     <value />
   </data>
@@ -145,6 +151,9 @@
     <value />
   </data>
   <data name="RepeatedRecord" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ResourseNotFound" xml:space="preserve">
     <value />
   </data>
 </root>
